@@ -1,0 +1,40 @@
+{% extends "dict/base.html" %}
+{% block content %}
+    <div class="row justify-content-left">
+        <div class="col-8">
+            <h3 class="mt-2">Welcome to the Dictionary</h3>
+            <ul class="list-group">
+                <li class="list-group-item py-0">Instructions: </li>
+                <li class="list-group-item py-0">Step 1: Start and stop the recording</li>
+                <li class="list-group-item py-0">Step 2: Save the sign</li>
+                <li class="list-group-item py-0">Step 3: Find the matching sign</li>             
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="input-group mb-3 justify-content-left">
+        <div class="input-group-prepend">
+            <form method="POST"> 
+                {% csrf_token %}
+            {{ form }}
+            <input class="btn btn-warning" type="submit" id="place_for_table" value="Save the Sign"/>    
+            </form>
+
+            <input class="btn btn-primary" type="submit" value="Find the sign" 
+            onclick="window.location='/output';" /> 
+        </div>
+   
+    </div>
+
+    <div id="jumbo-canvas" class="container justify-content-left">
+        
+           
+                {% load staticfiles %}
+                <script src="{% static "dict/js/sketch.js" %}"></script> 
+            
+        
+    </div>
+    <!-- <div id="place_for_table"></div> -->
+    
+{% endblock content %}

@@ -1,0 +1,78 @@
+{% extends "dict/base.html" %}
+{% block content %}
+    <input class="btn btn-primary align-items-end" type="submit" value="Record another sign" 
+    onclick="window.location='/';" /> 
+    <button  class="btn btn-secondary" onclick="location.href='{% url 'script' %}'">Execute Script</button> <hr>
+        {% if data %}
+        
+        {{data | safe}}
+
+        {% endif %}
+   
+    <!-- <h2>{{ DataFrame.index }}</h2> -->
+    
+    <h1>Your sign matches:</h1>
+    <!-- <h2>
+        {% for obj in poses %}
+        {{obj.pose_array}}
+        {% endfor %}
+    </h2> -->
+    <div class="table-responsive">
+    <table class="table table-sm table-bordered" border="1px">
+        <thead class="thead-dark">
+            <tr>
+                <script type="text/javascript">var videoo = [];</script> 
+                {% for ind in DataFrame.index %}
+                    <th>{{ ind }}</th>
+                    <script type="text/javascript"> 
+                        
+                        videoo[videoo.length] = "{{ ind }}";
+                    
+                        
+                    </script>
+                    
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in DataFrame %}
+                <th>{{ data }}</th> 
+            {% endfor %}
+        </tbody>    
+            <!-- {% for _, record in DataFrame.iterrows %}
+                <tr>
+                    {% for value in data %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr> -->
+            <!-- {% endfor %} -->
+        
+    
+    </table>
+</div>
+    <!-- <video width="530" height="440" controls autoplay>
+        {% load staticfiles %}
+        <source src="{% static "/dict/videos/ABOUT.mp4" %}" type="video/mp4"> </source>
+      </video> -->
+
+
+    <!-- <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="run_script">Run script</button>
+    </form> -->
+    {% load staticfiles %}
+
+    {% load staticfiles %}
+    <script src="{% static "dict/js/vid.js" %}"></script> 
+
+    
+    <!-- {% for vv in DataFrame.index %}
+    
+    {% load staticfiles %}
+    <video width='320' height= '240' controls>
+        <source src="{% static vv type='video/mp4' %}">
+        Your browser does not support the video tag.
+        </video>
+    {% endfor %} -->
+   
+{% endblock content %}
