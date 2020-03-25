@@ -8,8 +8,8 @@ signlib/.ipynb_checkpoints/
 signlib/Arcon.otf
 HSL/__pychache__/
 signlib/__pychache__/
-dict/static/dict/videos
-django_project/pose_dictionary
-./dict/static/dict/videos
-./django_project/pose_dictionary
+dict/static/dict/videos/
+django_project/pose_dictionary/
+./dict/static/dict/videos/
+./django_project/pose_dictionary/
 /django_project/output/
